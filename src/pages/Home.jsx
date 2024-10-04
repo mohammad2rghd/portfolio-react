@@ -7,6 +7,8 @@ import { loadFull } from "tsparticles";
 
 import { hexagon, links } from "../constants/particles";
 import bg02 from "../assets/bg02.jpeg";
+import bg01 from "../assets/bg01.jpeg";
+import bg03 from "../assets/bg03.jpeg";
 
 const Home = () => {
   const nameEl = useRef(null);
@@ -52,7 +54,7 @@ const Home = () => {
   return (
     <Box
       sx={{
-        backgroundImage: `url(${bg02})`,
+        backgroundImage: `url(${bg03})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
