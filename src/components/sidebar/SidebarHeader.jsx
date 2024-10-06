@@ -10,49 +10,49 @@ import { alphabetPersian } from "../../constants/alphabetPersian";
 import { CustomAvatar } from "../common";
 
 const SidebarHeader = () => {
-    const [start, setStart] = useState(false);
+  const [start, setStart] = useState(false);
 
-    return (
-        <>
-            <ThemeActionButton />
-            <CustomAvatar avatar={avatar} size={200} fallback="YG" />
-            <Typography variant="h6" color="#F93C92">
-                <Typography variant="caption" color="tomato">
-                    {" {{ "}
-                </Typography>
-                <RandomReveal
-                    isPlaying
-                    duration={4}
-                    characterSet={alphabetPersian}
-                    characters="یونس قربانی"
-                    onComplete={() => setStart(true)}
-                />
+  return (
+    <>
+      <ThemeActionButton />
+      <CustomAvatar avatar={avatar} size={200} fallback="YG" />
+      <Typography variant="h6" color="#F93C92">
+        <Typography variant="caption" color="tomato">
+          {" {{ "}
+        </Typography>
+        <RandomReveal
+          isPlaying
+          duration={4}
+          characterSet={alphabetPersian}
+          characters="محمد قلاوند"
+          onComplete={() => setStart(true)}
+        />
 
-                <Typography variant="caption" color="tomato">
-                    {" }} "}
-                </Typography>
-            </Typography>
-            {start && (
-                <Typography variant="caption" color="gray">
-                    <Typography variant="caption" color="tomato">
-                        [[{" "}
-                    </Typography>
-                    <RandomReveal
-                        isPlaying
-                        duration={4}
-                        characterSet={alphabetPersian}
-                        characters="توسعه دهنده فول استک و مدرس"
-                    />
-                    <Typography variant="caption" color="tomato">
-                        {" "}
-                        ]]
-                    </Typography>
-                </Typography>
-            )}
+        <Typography variant="caption" color="tomato">
+          {" }} "}
+        </Typography>
+      </Typography>
+      {start && (
+        <Typography variant="caption" color="gray">
+          <Typography variant="caption" color="tomato">
+            [[{" "}
+          </Typography>
+          <RandomReveal
+            isPlaying
+            duration={4}
+            characterSet={alphabetPersian}
+            characters="توسعه دهنده فول استک "
+          />
+          <Typography variant="caption" color="tomato">
+            {" "}
+            ]]
+          </Typography>
+        </Typography>
+      )}
 
-            <SocialMediaIcons />
-        </>
-    );
+      <SocialMediaIcons />
+    </>
+  );
 };
 
 export default SidebarHeader;
