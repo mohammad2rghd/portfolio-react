@@ -19,13 +19,12 @@ const Home = ({ helmetTitle }) => {
   const strings = [
     " توسعه دهنده فول استک هستم",
     " مدرس برنامه نویسی هستم",
-    " فریلنسر هستم",
     " محتواساز دنیای برنامه نویسی هستم",
   ];
 
   useEffect(() => {
     const typedName = new Typed(nameEl.current, {
-      strings: [" یونس قربانی "],
+      strings: ["محمد قلاوند"],
       typeSpeed: 110,
       backSpeed: 80,
       backDelay: 50,

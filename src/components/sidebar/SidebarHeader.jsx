@@ -18,7 +18,7 @@ const SidebarHeader = () => {
       <CustomAvatar avatar={avatar} size={200} fallback="YG" />
       <Typography variant="h6" color="#F93C92">
         <Typography variant="caption" color="tomato">
-          {" {{ "}
+          {"  "}
         </Typography>
         <RandomReveal
           isPlaying
@@ -29,13 +29,13 @@ const SidebarHeader = () => {
         />
 
         <Typography variant="caption" color="tomato">
-          {" }} "}
+          {"  "}
         </Typography>
       </Typography>
       {start && (
         <Typography variant="caption" color="gray">
           <Typography variant="caption" color="tomato">
-            [[{" "}
+            {" "}
           </Typography>
           <RandomReveal
             isPlaying
@@ -45,7 +45,6 @@ const SidebarHeader = () => {
           />
           <Typography variant="caption" color="tomato">
             {" "}
-            ]]
           </Typography>
         </Typography>
       )}
