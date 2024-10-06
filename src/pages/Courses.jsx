@@ -9,41 +9,41 @@ import { CustomDivider } from "../components/common";
 import { ShowCourses } from "../components/pages";
 
 const Courses = ({ helmetTitle }) => {
-    const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        setLoading(true);
+  useEffect(() => {
+    setLoading(true);
 
-        return () => {
-            setLoading(false);
-        };
-    }, []);
+    return () => {
+      setLoading(false);
+    };
+  }, []);
 
-    return (
-        <Card
-            sx={{
-                height: "100vh",
-                backgroundColor: "whitesmoke",
-                overflowY: "scroll",
-            }}
-        >
-            <Helmet>
-                <title>{helmetTitle}</title>
-            </Helmet>
-            <CardContent>
-                <CustomDivider
-                    bColor="primary.main"
-                    cColor="primary"
-                    icon={<SchoolRounded />}
-                    align="center"
-                    text="دوره های من"
-                />
+  return (
+    <Card
+      sx={{
+        height: "100vh",
+        backgroundColor: "whitesmoke",
+        overflowY: "scroll",
+      }}
+    >
+      <Helmet>
+        <title>{helmetTitle}</title>
+      </Helmet>
+      <CardContent>
+        <CustomDivider
+          bColor="primary.main"
+          cColor="primary"
+          icon={<SchoolRounded />}
+          align="center"
+          text="پروژه های من"
+        />
 
-                <Grid container sx={{ mx: 3, mt: 3 }}>
-                    <ShowCourses loading={loading} />
-                </Grid>
-            </CardContent>
-        </Card>
-    );
+        <Grid container sx={{ mx: 3, mt: 3 }}>
+          <ShowCourses loading={loading} />
+        </Grid>
+      </CardContent>
+    </Card>
+  );
 };
 export default Courses;
