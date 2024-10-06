@@ -17,7 +17,7 @@ const ShowCourses = ({ loading }) => {
   return (
     <>
       {courses.map((course, index) => (
-        <Grid key={index} xs={12} sm={6} md={6} lg={4} sx={{ px: 2, mb: 2 }}>
+        <Grid key={index} xs={12} sm={6} md={6} lg={4} sx={{ px: 1, mb: 2 }}>
           <Slide
             direction="up"
             in={loading}

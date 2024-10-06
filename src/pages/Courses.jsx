@@ -39,7 +39,16 @@ const Courses = ({ helmetTitle }) => {
           text="پروژه های من"
         />
 
-        <Grid container sx={{ mx: 3, mt: 3 }}>
+        <Grid
+          container
+          direction="row"
+          sx={{
+            justifyContent: "end",
+            alignItems: "center",
+            mx: 1,
+            mt: 2,
+          }}
+        >
           <ShowCourses loading={loading} />
         </Grid>
       </CardContent>
