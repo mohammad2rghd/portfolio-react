@@ -1,88 +1,117 @@
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 
+import { Helmet } from "react-helmet-async";
 import { Box, Typography } from "@mui/material";
 import Typed from "typed.js";
+import TextTransition, { presets } from "react-text-transition";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 
-import { hexagon, links } from "../constants/particles";
+import { links } from "../constants/particles";
 import bg02 from "../assets/bg02.jpeg";
-import bg01 from "../assets/bg01.jpeg";
-import bg03 from "../assets/bg03.jpeg";
 
-const Home = () => {
-  const nameEl = useRef(null);
-  const infoEl = useRef(null);
+const Home = ({ helmetTitle }) => {
+    const [index, setIndex] = useState(0);
 
-  const strings = [
-    "من یک توسعه دهنده فرانت اند هستم",
-    "من یک مدرس برنامه نویسی هستم",
-  ];
+    const nameEl = useRef(null);
+    const infoEl = useRef(null);
 
-  useEffect(() => {
-    const typedName = new Typed(nameEl.current, {
-      strings: ["MOHAMMAD"],
-      typeSpeed: 50,
-      backSpeed: 20,
-      backDelay: 10,
-      showCursor: false,
-    });
+    const strings = [
+        " توسعه دهنده فول استک هستم",
+        " مدرس برنامه نویسی هستم",
+        " فریلنسر هستم",
+        " محتواساز دنیای برنامه نویسی هستم",
+    ];
 
-    const typedInfo = new Typed(infoEl.current, {
-      strings: strings,
-      startDelay: 1500,
-      typeSpeed: 80,
-      backSpeed: 50,
-      backDelay: 50,
-      loop: true,
-      showCursor: false,
-    });
+    useEffect(() => {
+        const typedName = new Typed(nameEl.current, {
+            strings: [" یونس قربانی "],
+            typeSpeed: 110,
+            backSpeed: 80,
+            backDelay: 50,
+            showCursor: false,
+        });
 
-    return () => {
-      typedName.destroy();
-      typedInfo.destroy();
-    };
-  }, []);
+        const stringsTransition = setInterval(() => {
+            setIndex((index) => index + 1);
+        }, 3000);
 
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
-  }, []);
+        return () => {
+            typedName.destroy();
+            clearInterval(stringsTransition);
+        };
+    }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
-  }, []);
-  return (
-    <Box
-      sx={{
-        backgroundImage: `url(${bg03})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={links}
-      />
-      <Typography ref={nameEl} variant="h3" color="gold"></Typography>
-      <Typography
-        ref={infoEl}
-        variant="h4"
-        color="whitesmoke"
-        sx={{
-          textDecoration: "underline",
-          textDecorationColor: "#1976d2",
-        }}
-      ></Typography>
-    </Box>
-  );
+    const particlesInit = useCallback(async (engine) => {
+        await loadFull(engine);
+    }, []);
+
+    const particlesLoaded = useCallback(async (container) => {
+        await console.log(container);
+    }, []);
+    return (
+        <Box
+            sx={{
+                backgroundImage: `url(${bg02})`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                height: "100vh",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+            }}
+        >
+            <Helmet>
+                <title>{helmetTitle}</title>
+            </Helmet>
+            <Particles
+                id="tsparticles"
+                init={particlesInit}
+                loaded={particlesLoaded}
+                options={links}
+            />
+            <Box component="div" sx={{ display: "flex" }}>
+                <Typography variant="h3" color="#F93C92">
+                    {"{{"}
+                </Typography>
+                <Typography
+                    ref={nameEl}
+                    variant="h3"
+                    color="tomato"
+                ></Typography>
+
+                <Typography variant="h3" color="#F93C92">
+                    {"}}"}
+                </Typography>
+            </Box>
+
+            <Box component="div" sx={{ display: "flex" }}>
+                <TextTransition springConfig={presets.wobbly}>
+                    <Typography
+                        variant="h4"
+                        color="whitesmoke"
+                        sx={{
+                            mt: 4,
+                            textDecoration: "underline",
+                            textDecorationColor: "#F93C92",
+                        }}
+                    >
+                        {strings[index % strings.length]}
+                    </Typography>
+                </TextTransition>
+
+                <Typography
+                    variant="h4"
+                    color="whitesmoke"
+                    sx={{ mt: 4, mr: 1 }}
+                >
+                    من یک
+                </Typography>
+            </Box>
+        </Box>
+    );
 };
 
 export default Home;
