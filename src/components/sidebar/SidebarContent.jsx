@@ -2,25 +2,26 @@ import { Box, Divider } from "@mui/material";
 import { SidebarHeader, SidebarFooter, SidebarTabs } from "./";
 
 const SidebarContent = () => {
-    return (
-        <Box
-            sx={{
-                justifyContent: "center",
-                textAlign: "center",
-                mt: 2,
-            }}
-        >
-            <SidebarHeader />
+  return (
+    <Box
+      sx={{
+        justifyContent: "center",
+        textAlign: "center",
+        mt: 2,
+        zIndex: 5,
+      }}
+    >
+      <SidebarHeader />
 
-            <Divider variant="middle" />
+      <Divider variant="middle" />
 
-            <SidebarTabs />
+      <SidebarTabs />
 
-            <Divider variant="middle" sx={{ mt: 2 }} />
+      <Divider variant="middle" sx={{ mt: 2 }} />
 
-            <SidebarFooter />
-        </Box>
-    );
+      <SidebarFooter />
+    </Box>
+  );
 };
 
 export default SidebarContent;

@@ -60,7 +60,10 @@ const Home = ({ helmetTitle }) => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        position: "relative",
+        overflow: "hidden",
       }}
+      id="particles-container"
     >
       <Helmet>
         <title>{helmetTitle}</title>
@@ -70,6 +73,14 @@ const Home = ({ helmetTitle }) => {
         init={particlesInit}
         loaded={particlesLoaded}
         options={links}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%", // Match the size of the parent Box
+          height: "100%", // Match the size of the parent Box
+          zIndex: 1, // Make sure it stays behind the content
+        }}
       />
       <Box component="div" sx={{ display: "flex" }}>
         <Typography variant="h3" color="#F93C92">

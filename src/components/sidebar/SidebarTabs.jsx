@@ -19,7 +19,6 @@ const SidebarTabs = () => {
       orientation="vertical"
       variant="scrollable"
       scrollbutton="auto"
-      allowScrollButtonsMobile
       value={pageNumber}
       indicatorColor={theme.palette.mode === "dark" ? "secondary" : "primary"}
       textColor={theme.palette.mode === "dark" ? "secondary" : "primary"}
