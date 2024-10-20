@@ -15,11 +15,7 @@ const Home = ({ helmetTitle }) => {
 
   const nameEl = useRef(null);
 
-  const strings = [
-    " توسعه دهنده فول استک هستم",
-    " مدرس برنامه نویسی هستم",
-    " محتواساز دنیای برنامه نویسی هستم",
-  ];
+  const strings = [" توسعه دهنده فول استک هستم", " مدرس برنامه نویسی هستم"];
 
   useEffect(() => {
     const typedName = new Typed(nameEl.current, {
