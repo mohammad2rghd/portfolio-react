@@ -1,20 +1,19 @@
-import { useEffect, useRef, useCallback, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Helmet } from "react-helmet-async";
 import { Box, Typography } from "@mui/material";
 import Typed from "typed.js";
 import TextTransition, { presets } from "react-text-transition";
-import Particles from "react-particles";
-import { loadFull } from "tsparticles";
+// import Particles from "react-particles";
+// import { loadFull } from "tsparticles";
 
-import { links } from "../constants/particles";
+// import { links } from "../constants/particles";
 import bg05 from "../assets/bg05.jpeg";
 
 const Home = ({ helmetTitle }) => {
   const [index, setIndex] = useState(0);
 
   const nameEl = useRef(null);
-  const infoEl = useRef(null);
 
   const strings = [
     " توسعه دهنده فول استک هستم",
@@ -41,13 +40,13 @@ const Home = ({ helmetTitle }) => {
     };
   }, []);
 
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
-  }, []);
+  // const particlesInit = useCallback(async (engine) => {
+  //   await loadFull(engine);
+  // }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
-  }, []);
+  // const particlesLoaded = useCallback(async (container) => {
+  //   await console.log(container);
+  // }, []);
   return (
     <Box
       sx={{
@@ -68,7 +67,7 @@ const Home = ({ helmetTitle }) => {
       <Helmet>
         <title>{helmetTitle}</title>
       </Helmet>
-      <Particles
+      {/* <Particles
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
@@ -81,7 +80,7 @@ const Home = ({ helmetTitle }) => {
           height: "100%", // Match the size of the parent Box
           zIndex: 1, // Make sure it stays behind the content
         }}
-      />
+      /> */}
       <Box component="div" sx={{ display: "flex" }}>
         <Typography variant="h3" color="#F93C92">
           {"{{"}
