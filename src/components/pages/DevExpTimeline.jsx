@@ -9,10 +9,12 @@ import {
   TimelineConnector,
 } from "@mui/lab";
 import { HomeRepairServiceRounded } from "@mui/icons-material";
+import { useTheme } from "@mui/material/styles";
 
 import { devEXP } from "../../constants/details";
 
 const DevExpTimeline = ({ loading }) => {
+  const theme = useTheme();
   return (
     <Timeline position="right" sx={{ direction: "ltr" }}>
       {devEXP.map((item, index) => (
@@ -32,7 +34,12 @@ const DevExpTimeline = ({ loading }) => {
               {index !== 3 ? <TimelineConnector /> : null}
             </TimelineSeparator>
             <TimelineContent>
-              <Typography variant="caption" color="gray">
+              <Typography
+                variant="caption"
+                sx={{
+                  color: theme.palette.mode === "dark" ? "#F8F8F2" : "#44475A",
+                }}
+              >
                 {item.year}
               </Typography>
               <Typography variant="body1" color="black">

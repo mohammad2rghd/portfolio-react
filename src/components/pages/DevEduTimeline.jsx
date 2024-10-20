@@ -9,10 +9,13 @@ import {
   TimelineConnector,
 } from "@mui/lab";
 import { SchoolRounded } from "@mui/icons-material";
+import { useTheme } from "@mui/material/styles";
 
 import { devEdu } from "../../constants/details";
 
 const DevEduTimeline = ({ loading }) => {
+  const theme = useTheme();
+
   return (
     <Timeline position="right" sx={{ direction: "ltr" }}>
       {devEdu.map((item, index) => (
@@ -32,7 +35,13 @@ const DevEduTimeline = ({ loading }) => {
               {index !== 3 ? <TimelineConnector /> : null}
             </TimelineSeparator>
             <TimelineContent>
-              <Typography variant="caption" color="gray">
+              <Typography
+                variant="caption"
+                color="gray"
+                sx={{
+                  color: theme.palette.mode === "dark" ? "#F8F8F2" : "#44475A",
+                }}
+              >
                 {item.year}
               </Typography>
               <Typography variant="body1" color="black">
