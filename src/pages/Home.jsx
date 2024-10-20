@@ -8,7 +8,7 @@ import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 
 import { links } from "../constants/particles";
-import bg03 from "../assets/bg03.jpeg";
+import bg05 from "../assets/bg05.jpeg";
 
 const Home = ({ helmetTitle }) => {
   const [index, setIndex] = useState(0);
@@ -51,7 +51,7 @@ const Home = ({ helmetTitle }) => {
   return (
     <Box
       sx={{
-        backgroundImage: `url(${bg03})`,
+        backgroundImage: `url(${bg05})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -82,7 +82,10 @@ const Home = ({ helmetTitle }) => {
         </Typography>
       </Box>
 
-      <Box component="div" sx={{ display: "flex" }}>
+      <Box
+        component="div"
+        sx={{ display: "flex", flexDirection: "row-reverse" }}
+      >
         <TextTransition springConfig={presets.wobbly}>
           <Typography
             variant="h4"

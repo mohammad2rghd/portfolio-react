@@ -57,7 +57,7 @@ function AppContainer() {
         <DrawerActionButton />
         <PagesContainer>
           <Page pageNumber={pageNumber} index={0}>
-            <Home helmetTitle="وب سایت شخصی یونس قربانی" />
+            <Home helmetTitle="وب سایت شخصی" />
           </Page>
           <Page pageNumber={pageNumber} index={1}>
             <About helmetTitle="وب سایت شخصی | درباره من" />
