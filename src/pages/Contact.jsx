@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Typography, Card, CardContent, Slide } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { AccountCircle } from "@mui/icons-material";
+import { useTheme } from "@mui/material/styles";
+
 import { Helmet } from "react-helmet-async";
 
 import { CustomDivider } from "../components/common";
@@ -11,6 +13,7 @@ import { ContactForm } from "../components/pages";
 
 const Contact = ({ helmetTitle }) => {
   const [loading, setLoading] = useState(false);
+  const theme = useTheme();
 
   useEffect(() => {
     setLoading(true);
@@ -24,7 +27,7 @@ const Contact = ({ helmetTitle }) => {
     <Card
       sx={{
         height: "100vh",
-        backgroundColor: "whitesmoke",
+        backgroundColor: theme.palette.mode === "dark" ? "#6272A4" : "#F8F8F2",
         overflowY: "scroll",
         display: "flex",
         flexDirection: "column",

@@ -3,17 +3,20 @@ import { Card, CardContent } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 
 import { CodeRounded, SelfImprovementRounded } from "@mui/icons-material";
+import { useTheme } from "@mui/material/styles";
 
 import { DevInfo, Skills, DevWorkCount } from "../components/pages";
 import avatar from "../assets/avatar02.jpg";
 import { CustomAvatar, CustomDivider } from "../components/common";
 
 const About = ({ helmetTitle }) => {
+  const theme = useTheme();
+
   return (
     <Card
       sx={{
         height: "100vh",
-        backgroundColor: "whitesmoke",
+        backgroundColor: theme.palette.mode === "dark" ? "#6272A4" : "#F8F8F2",
         overflowY: "scroll",
       }}
     >

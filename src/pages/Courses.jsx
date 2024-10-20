@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+
 import Grid from "@mui/material/Unstable_Grid2";
 import { SchoolRounded } from "@mui/icons-material";
 
@@ -10,6 +12,7 @@ import { ShowCourses } from "../components/pages";
 
 const Courses = ({ helmetTitle }) => {
   const [loading, setLoading] = useState(false);
+  const theme = useTheme();
 
   useEffect(() => {
     setLoading(true);
@@ -23,7 +26,7 @@ const Courses = ({ helmetTitle }) => {
     <Card
       sx={{
         height: "100vh",
-        backgroundColor: "whitesmoke",
+        backgroundColor: theme.palette.mode === "dark" ? "#6272A4" : "#F8F8F2",
         overflowY: "scroll",
       }}
     >

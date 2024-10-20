@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
+import { useTheme } from "@mui/material/styles";
+
 import {
   SettingsEthernetRounded,
   HomeRepairServiceRounded,
@@ -14,6 +16,7 @@ import { DevEduTimeline, DevExpTimeline } from "../components/pages";
 
 const Resume = ({ helmetTitle }) => {
   const [loading, setLoading] = useState(false);
+  const theme = useTheme();
 
   useEffect(() => {
     setLoading(true);
@@ -27,7 +30,7 @@ const Resume = ({ helmetTitle }) => {
     <Card
       sx={{
         height: "100vh",
-        backgroundColor: "whitesmoke",
+        backgroundColor: theme.palette.mode === "dark" ? "#6272A4" : "#F8F8F2",
         overflowY: "scroll",
       }}
     >
