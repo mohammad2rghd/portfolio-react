@@ -10,12 +10,12 @@ import {
 } from "@mui/lab";
 import { HomeRepairServiceRounded } from "@mui/icons-material";
 
-import { devEdu } from "../../constants/details";
+import { devEXP } from "../../constants/details";
 
 const DevExpTimeline = ({ loading }) => {
   return (
     <Timeline position="right" sx={{ direction: "ltr" }}>
-      {devEdu.map((item, index) => (
+      {devEXP.map((item, index) => (
         <Slide
           key={index}
           direction="up"
