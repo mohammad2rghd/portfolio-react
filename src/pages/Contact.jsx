@@ -8,7 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import { Helmet } from "react-helmet-async";
 
 import { CustomDivider } from "../components/common";
-import worldMap from "../assets/map.svg";
+
 import { ContactForm } from "../components/pages";
 
 const Contact = ({ helmetTitle }) => {

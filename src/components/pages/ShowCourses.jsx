@@ -11,12 +11,12 @@ import {
 import EllipsisText from "react-ellipsis-text";
 import Grid from "@mui/material/Unstable_Grid2";
 
-import { courses } from "../../constants/courses";
+import { projects } from "../../constants/projects";
 
 const ShowCourses = ({ loading }) => {
   return (
     <>
-      {courses.map((course, index) => (
+      {projects.map((course, index) => (
         <Grid key={index} xs={12} sm={6} md={6} lg={4} sx={{ px: 1, mb: 2 }}>
           <Slide
             direction="up"
