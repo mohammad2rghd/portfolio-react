@@ -1,4 +1,10 @@
-import { fullStack, angular, react, meanStack } from "../assets/projects";
+import {
+  fullStack,
+  angular,
+  react,
+  meanStack,
+  nodejs,
+} from "../assets/projects";
 
 export const projects = [
   {
@@ -32,7 +38,7 @@ export const projects = [
   {
     title: "online shop",
     desc: "nextjs,nodejs,mongoDB,express",
-    image: fullStack,
+    image: nodejs,
     link: "",
     info: "",
   },
