@@ -18,6 +18,7 @@ const About = ({ helmetTitle }) => {
         height: "100vh",
         backgroundColor: theme.palette.mode === "dark" ? "#6272A4" : "#F8F8F2",
         overflowY: "scroll",
+        padding: "0 30px",
       }}
     >
       <Helmet>
